@@ -27,7 +27,6 @@
     "@types/node": "^26.1.1",
     "dotenv": "^17.4.2",
     "eslint": "^10.7.0",
-    "express": "^5.2.1",
     "install": "^0.13.0",
     "nodemon": "^3.1.14",
     "npm": "^12.0.1",
@@ -38,7 +37,8 @@
   },
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "dotenv": "^17.4.2"
+    "prod": "^1.0.1"
   }
 }
