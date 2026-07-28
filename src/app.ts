@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/user', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello World!!');
 })
 
 app.listen(config.port, () => {
