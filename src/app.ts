@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
+app.get('/user', (req, res) => {
+    res.send('Hello World!');
+})
+
 app.listen(config.port, () => {
     console.log(`Server is running on port ${config.port}`);
 })
