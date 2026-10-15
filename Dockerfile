@@ -1,4 +1,4 @@
-FROM node AS Builder
+FROM node AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY package*.json ./
 
 RUN npm ci --omit=dev
 
-COPY --from=Builder /app/dist ./dist
+COPY --from=builder /app/dist ./dist
 
 ENV NODE_ENV=production
 
