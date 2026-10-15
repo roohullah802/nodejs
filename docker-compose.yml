@@ -1,8 +1,6 @@
 services:
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: roohullah572/nodejs:${IMAGE_TAG}
     container_name: backend
     restart: always
     ports:
