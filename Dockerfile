@@ -1,29 +1,33 @@
-FROM node AS builder
+# -----------------------
+# Build stage
+# -----------------------
+FROM node:22-bookworm-slim AS builder
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm ci
 
 COPY . .
 
 RUN npm run build
 
 
-FROM node
+# -----------------------
+# Production stage
+# -----------------------
+FROM node:22-bookworm-slim
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev && \
+    npm cache clean --force
 
 COPY --from=builder /app/dist ./dist
 
-ENV NODE_ENV=production
+USER node
 
-EXPOSE 3000
-
-CMD [ "npm", "start" ]
-
+CMD ["node", "dist/index.js"]
