@@ -23,5 +23,5 @@ app.get('/dev', (req, res) => {
 
 
 app.listen(config.port, () => {
-    console.log(`Server is running on portt ${config.port}`);
+    console.log(`Server is running on port ${config.port}`);
 })
